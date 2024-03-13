@@ -1,0 +1,26 @@
+[package]
+name = "pad_extract_poc_bulk"
+version = "0.1.0"
+edition = "2021"
+
+# Starting in Rust 1.62 you can use `cargo add` to add dependencies 
+# to your project.
+#
+# If you're using an older Rust version,
+# download cargo-edit(https://github.com/killercup/cargo-edit#installation) 
+# to install the `add` subcommand.
+#
+# Running `cargo add DEPENDENCY_NAME` will
+# add the latest version of a dependency to the list,
+# and it will keep the alphabetic ordering for you.
+
+[dependencies]
+lambda_http = "0.10.0"
+connectorx = { version = "0.3.2", features = ["dst_arrow", "src_postgres", "dst_arrow2"] }
+polars = { version = "0.32.1", features = ["polars-io", "parquet", "lazy", "dtype-struct"] }
+openssl = { version = "0.10.35", features = ["vendored"] }
+tokio = { version = "1", features = ["macros"] }
+futures = "0.3.30"
+aws-sdk-s3 = "1.12.0"
+aws-config = "1.1.2"
+
